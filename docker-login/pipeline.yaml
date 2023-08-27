@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: docker-login
+spec:
+  description: |
+    This pipeline just logs into docker.
+  params:
+  - name: username
+    type: string
+    description: Docker username
+  - name: password
+    type: string
+    description: Docker password
+  tasks:
+  - name: docker-login
+    taskRef:
+      name: docker-login
+    params:
+    - name: username
+      value: $(params.username)
+    - name: password
+      value: $(params.password)
