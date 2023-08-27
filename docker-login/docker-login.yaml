@@ -1,0 +1,17 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: docker-login
+spec:
+  params:
+  - name: username
+    type: string
+  - name: password
+    type: string
+  description: Log into docker.
+  steps:
+  - name: read
+    image: docker:latest
+    script: |
+      #!/usr/bin/env sh
+      docker login -u $(params.username) -p $(params.password)
