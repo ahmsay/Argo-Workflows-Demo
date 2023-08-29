@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: create-file
+spec:
+  description: Create a file.
+  workspaces:
+  - name: source
+  steps:
+  - name: create-file
+    image: alpine:latest
+    script: |
+      #!/usr/bin/env sh
+      echo hello > hello.txt
+      sleep 3600

@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: read-file
+spec:
+  description: Read the contents of a file.
+  workspaces:
+  - name: source
+  steps:
+  - name: read-file
+    image: alpine:latest
+    script: |
+      #!/usr/bin/env sh
+      sleep 3600

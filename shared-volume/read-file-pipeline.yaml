@@ -1,0 +1,16 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: read-file
+spec:
+  description: |
+    This pipeline reads a file from a shared volume.
+  workspaces:
+  - name: shared-data
+  tasks:
+  - name: read-file
+    taskRef:
+      name: read-file
+    workspaces:
+    - name: source
+      workspace: shared-data

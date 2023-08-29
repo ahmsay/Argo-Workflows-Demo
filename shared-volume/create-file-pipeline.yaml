@@ -1,0 +1,16 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: create-file
+spec:
+  description: |
+    This pipeline creates a file that will be read from another pipeline.
+  workspaces:
+  - name: shared-data
+  tasks:
+  - name: create-file
+    taskRef:
+      name: create-file
+    workspaces:
+    - name: source
+      workspace: shared-data
