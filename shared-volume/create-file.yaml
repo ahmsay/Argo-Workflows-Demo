@@ -12,4 +12,3 @@ spec:
     script: |
       #!/usr/bin/env sh
       echo hello > hello.txt
-      sleep 3600

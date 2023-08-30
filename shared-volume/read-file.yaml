@@ -11,4 +11,4 @@ spec:
     image: alpine:latest
     script: |
       #!/usr/bin/env sh
-      sleep 3600
+      cat /workspace/source/hello.txt

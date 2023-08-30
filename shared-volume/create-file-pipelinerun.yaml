@@ -12,4 +12,3 @@ spec:
   - name: shared-data
     persistentVolumeClaim:
       claimName: tekton-pvc
-    subPath: ./
