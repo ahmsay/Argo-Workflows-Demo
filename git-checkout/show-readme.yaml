@@ -12,6 +12,3 @@ spec:
     script: |
       #!/usr/bin/env sh
       cat $(workspaces.source.path)/README.md
-      pwd
-      echo hello
-      ls
